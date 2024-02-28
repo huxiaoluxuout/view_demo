@@ -4,6 +4,9 @@
 		<view class="text-area">
 			<text class="title">{{title}}</text>
 		</view>
+		<button @click="()=>$refs.refAddress.show = true">显示</button>
+		<zshu-address can-select-all ref="refAddress" :checkbox="true" @updateAddress="updateAddress"></zshu-address>
+
 	</view>
 </template>
 
@@ -17,8 +20,14 @@
 		onLoad() {
 
 		},
-		methods: {
+		onReady() {
+			
 
+		},
+		methods: {
+			updateAddress(e) {
+				console.log('updateAddress', e)
+			},
 		}
 	}
 </script>
